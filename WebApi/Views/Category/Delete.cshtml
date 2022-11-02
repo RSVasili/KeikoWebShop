@@ -1,0 +1,69 @@
+﻿@model Keiko.Domain.Models.Product.CategoryProduct
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden/>
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Delete Category</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Id"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Id" disabled class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="CategoryName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="CategoryName" disabled class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="CategoryDescription"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="CategoryDescription" disabled class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="IsFavorite"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="IsFavorite" disabled class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-outline-danger w-100" value="Delete"/>
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-outline-success w-100">BACK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">@* Keep this empty *@</div>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
